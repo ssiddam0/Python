@@ -1,0 +1,32 @@
+# This Program uses a dictionary to keep track of course numbers(key)
+# with Instructor name, meeting time of each course, and room number where the courses meet.
+
+#=======================Variable assignments
+
+# Create a dictionary with course number as key and rest as values
+
+coursedetails = {'CS101':[3004,'Haynes','8:00 a.m.'],
+                 'CS102':[4501,'Rich','9:00 a.m.'],
+                 'CS103':[1411,'Burke','1:00 p.m.'],
+                 'CS104':[3004,'Alvarado','10:00 a.m.']}
+
+#====================Print the course numbers for the user
+print('\nThis program uses lists and dictionaries to keep track of course numbers and their information.')
+print('Available course numbers are:')
+print(coursedetails.keys())
+
+print('****************************************')
+#=====================Get the course number from user
+
+coursenum = input("Enter the course number you would like to get the information for:\n")
+
+#=============Look it up in the dictionary and print
+
+list = coursedetails.get(coursenum,'-1')
+
+if(list == '-1'):
+    print("Course not found")
+else:
+    print('Class is at ',list[2],' meets in room# ',list[0],' and the instructor name is \"',list[1],'\"')
+
+input('\nPress enter to continue\n\n')
